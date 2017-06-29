@@ -1,0 +1,83 @@
+<h1>Passenger Search</h1>
+<div class="row card">
+
+
+<div class="control-group">
+    <label>Name:</label>
+    <input [(ngModel)]="name" class="form-control">
+</div>
+
+<div class="control-group">
+    <label>Firstname:</label>
+    <input [(ngModel)]="firstname" class="form-control">
+</div>
+<!--
+<div class="control-group">
+    <label>Status:</label>
+    <input [(ngModel)]="passengerStatus" class="form-control">
+</div>-->
+
+<div class="control-group">
+    
+    <!--<button 
+        class="btn btn-default"
+        (click)="search()" [disabled]="!name || !firstname">Search</button>-->
+         <button class="btn btn-default" (click)="search()">Search</button>
+
+</div>
+
+
+<div class="row">
+    <div *ngFor="let p of passengers" class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <passenger-card 
+        [item]="p" 
+        [(selected)]="basket[p.id]">
+        </passenger-card>
+    </div>    
+</div>
+
+<!-- (selectedChange)="basket[f.id] = $event" -->
+
+<div class="card">
+<table *ngIf="passengers.length > 0" class="table table-contensed">
+    <tr *ngFor="let p of passengers" [ngClass] ="{'active': p == selectedPassenger}"> <!--ausgewählte Zeile active css Attribut -->
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }} </td>
+        <td>{{ p.firstName }} </td>
+        <td>{{ p.passengerStatus | status: 'long' }} </td>        
+        <td [ngStyle]="{color: p.passengerStatus | statusColor }">{{ p.passengerStatus | status: 'short' }} </td> 
+        <td><button class="btn btn-default" (click)="select(p)">Select</button></td>
+        <!--<td><a (click)="select(p)">Select</a></td>-->
+    </tr>
+</table>
+</div>
+
+<div *ngIf="selectedPassenger">
+    <div>
+    <pre>{{ message }}</pre>
+    </div>
+    <div class="form-group">
+    <label>Id</label> <input [(ngModel)]="selectedPassenger.id" class="form-control">
+    <label>Name</label> <input [(ngModel)]="selectedPassenger.name" class="form-control">
+     <label>Vorname</label> <input [(ngModel)]="selectedPassenger.firstname" class="form-control">
+     <label>Status</label> <input [(ngModel)]="selectedPassenger.passengerStatus" class="form-control">
+    </div>
+    <div>
+     <button class="btn btn-default" (click)="save()">Save</button></div>
+
+</div>
+
+<div class="row card">
+<pre>Data
+-----------------
+{{ basket | json }}    
+</pre>
+</div>
+
+<div class="card">
+<pre>Data
+-----------------
+{{ selectedPassenger | json }}    
+</pre>
+</div>
+</div>

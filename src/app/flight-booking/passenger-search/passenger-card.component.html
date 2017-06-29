@@ -1,0 +1,14 @@
+<div style="padding:20px;"
+     class="card"
+     [ngStyle]="{'background-color': (selected) ?  'darkorange' : 'yellowgreen' }">
+
+    <h3>{{item.name}}  {{item.firstName}}</h3>
+    <p>Passagier-Nr. #{{item.id}}</p>
+    <p>Status: {{ item.passengerStatus | status: 'long' }} </p>
+    <p [ngStyle]="{color: item.passengerStatus | statusColor }">{{ item.passengerStatus | status: 'short' }} </p> 
+
+    <p>
+       <button *ngIf="!selected" (click)="select()">Auswählen</button>
+       <button *ngIf="selected" (click)="deselect()">Entfernen</button>   
+    </p>
+</div>
