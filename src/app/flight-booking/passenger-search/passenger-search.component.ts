@@ -36,6 +36,9 @@ export class PassengerSearchComponent implements OnInit {
 
     search(): void {
 
+        // keine Suche wenn name und fistname leer sind 
+         if (!this.name || !this.firstname) return;
+
         this.passengerService
             .find(this.name, this.firstname)
             .subscribe(
