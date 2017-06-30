@@ -1,0 +1,95 @@
+ANGULAR Workshop 28.06.2017
+
+-- Links -----
+https://github.com/manfredsteyer/2017_06_28/
+https://goo.gl/7nse3V
+
+
+Browser DOM Properties
+Browser DOM Events
+https://www.w3schools.com/jsref/dom_obj_event.asp
+[disabled] vom Browser
+[(ngModel)] Angular
+
+
+Debugging im HTML möglich. Sourcemap wird bereitgestellt.
+z.B. *ngFor Schleife
+
+
+START
+mit Angular CLI
+
+package.json
+Skripte zum Start, Testserver, etc.
+
+
+index.html
+Hauptkomponente wird gebootstrapt, zum Start der Anwendung
+
+main.ts
+
+app.component.html
+componet noch hinzufügen
+
+Snippets:
+a-comp a.comp
+Angular V4 Typescript Snippet
+
+number int od. double schizophrenste Datentyp überhaupt
+
+Module registrieren
+app.modules
+import und dann
+declarations
+
+--------------------------------------------------------------
+Service sind Klassen, werden an Token gebunden.
+
+
+Service Provider
+Objekt das Token auf Service anbietet (Abb. FlugService rot)
+
+Module können in Service schreiben und lesen
+
+Service gilt pro Komponente und darunter (Komponentenbaum)
+
+
+gleiche Service kann aber auch für andere Komponente geleten
+
+Konstanten
+Dekorator @inject wenn Datentyp nicht der Token ist
+
+
+Pipes
+{{VON | Ort: 'S': 'E'}}
+value	     param1 param2
+
+registrieren unter modules
+
+Pipes und Components werden deklariert (unter declarations)
+
+Module
+BrowserModule importiert CommonModule
+
+--
+ng build --prod (optimierte Prod.Version ohne Kommentare, whitespace, etc 
+--> landet im Dist Ordner --> ab auf Webserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
