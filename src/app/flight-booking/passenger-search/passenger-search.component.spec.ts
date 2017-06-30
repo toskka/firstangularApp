@@ -67,7 +67,7 @@ describe('PassengerSearchComponent', () => {
         expect(comp.passengers.length).toBe(0);
     });
 
-   it('--> Test 2: should load passenger --> name and firstname', () => { 
+   it('--> Test 2: should load passenger --> name and firstname / Test ob search Methode das search aufruft', () => { 
         // SpyOn vor dem Erzeugen der Komponenten aufrufen!
         spyOn(passengerServiceMock, 'find').and.callThrough();
 
@@ -83,7 +83,7 @@ describe('PassengerSearchComponent', () => {
         expect(passengerServiceMock.find).toHaveBeenCalled();
   });
 
-   it('--> Test 3: should not load passenger without name and firstname', () => { 
+   it('--> Test 3: should not load passenger without name and firstname / Test ob search Methode das search aufruft', () => { 
 	    // SpyOn vor dem Erzeugen der Komponenten aufrufen!
         spyOn(passengerServiceMock, 'find').and.callThrough();
 
