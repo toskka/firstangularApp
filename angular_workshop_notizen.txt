@@ -85,9 +85,9 @@ Locator:
 Auf Elemt Buttoneingabe testen
 Auf Buttoninhalt testen
 
-elemt(by.css("button")) Button
-elemt(by.css(".x"))	Klasse
-elemt(by.css("#x"))	Id
+element(by.css("button")) Button
+element(by.css(".x"))	Klasse
+element(by.css("#x"))	Id
 
 Ausführen: npm run e2e
 
@@ -101,12 +101,41 @@ valid: Formulare als ganzes validiert, korrekt validiert
 Angular erzeugt Objektgraph
 
 <div *ngIf="!f?.controls?.von?.valid">
+Save Exit Operator
 ?: vermeiden, dass Prüfung in NullpointerException läuft
 
 
 <div *ngIf="!f?.controls?.von?.hasError('required')">
 Errorrückgabe wenn required nicht erfüllt
 
+Standard-Valdidatoren:
+required
+minlength
+maxlength
+patern
+
+(ab angular 4):
+email 
+min
+max
+email
+
+Stylesheet in der Komponente gelten nur für Komponente isoliert
+Alternative zentrales Stylesheet --> angularcli.json
+encapsulation: ViewEncapsulation.None ---> bindet Stylesheet zentral ein
+
+Input Validator Direktive
+a-directive shortcut
+
+
+--------------------------
+
+Routing
+nur für Hauptmodul: forRoot
+für featureModul: forChild
+direkter Aufruf des Features möglich, da eine eigene URL
+
+Strg+Shift+B
 
 
 

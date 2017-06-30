@@ -6,17 +6,19 @@
         <label>Name:</label>
         <!--<input [(ngModel)]="name" class="form-control">-->
         <input required 
-                minlength="5" 
+                minlength="5"
+                maxlength="20" 
                 [(ngModel)]="name"
                 name="name" 
                 class="form-control">
         <div *ngIf="f?.controls?.name?.hasError('required') && f?.controls?.name?.dirty">...bitte Name eingeben...</div>
         <div *ngIf="f?.controls?.name?.hasError('minlength')">...bitte mind. 5 Zeichen...</div>
+        <div *ngIf="f?.controls?.name?.hasError('maxlength')">...bitte max. 20 Zeichen...</div>
     </div>
 
     <div class="control-group">
         <label>Firstname:</label>
-        <input [(ngModel)]="firstname" class="form-control">
+        <input [(ngModel)]="firstname" class="form-control" name="firstName">
     </div>
 
 
