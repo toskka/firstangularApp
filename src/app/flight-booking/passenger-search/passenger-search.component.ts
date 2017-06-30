@@ -6,7 +6,8 @@ import { PassengerService } from "app/flight-booking/passenger-search/passenger.
 @Component({
     selector: 'passenger-search',
     templateUrl: './passenger-search.component.html',
-    providers: [PassengerService]
+    providers: [PassengerService],
+    styleUrls: ['./passenger-search.component.css'] 
 })
 export class PassengerSearchComponent implements OnInit {
     
@@ -37,7 +38,7 @@ export class PassengerSearchComponent implements OnInit {
     search(): void {
 
         // keine Suche wenn name und fistname leer sind 
-         if (!this.name || !this.firstname) return;
+        // if (!this.name || !this.firstname) return;
 
         this.passengerService
             .find(this.name, this.firstname)

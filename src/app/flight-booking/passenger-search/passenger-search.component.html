@@ -1,30 +1,40 @@
 <h1>Passenger Search</h1>
 <div class="row card">
 
+<form #f="ngForm">
+    <div class="control-group">
+        <label>Name:</label>
+        <!--<input [(ngModel)]="name" class="form-control">-->
+        <input required 
+                minlength="5" 
+                [(ngModel)]="name"
+                name="name" 
+                class="form-control">
+        <div *ngIf="f?.controls?.name?.hasError('required') && f?.controls?.name?.dirty">...bitte Name eingeben...</div>
+        <div *ngIf="f?.controls?.name?.hasError('minlength')">...bitte mind. 5 Zeichen...</div>
+    </div>
 
-<div class="control-group">
-    <label>Name:</label>
-    <input [(ngModel)]="name" class="form-control">
-</div>
+    <div class="control-group">
+        <label>Firstname:</label>
+        <input [(ngModel)]="firstname" class="form-control">
+    </div>
 
-<div class="control-group">
-    <label>Firstname:</label>
-    <input [(ngModel)]="firstname" class="form-control">
-</div>
-<!--
-<div class="control-group">
-    <label>Status:</label>
-    <input [(ngModel)]="passengerStatus" class="form-control">
-</div>-->
 
-<div class="control-group">
-    
-    <!--<button 
-        class="btn btn-default"
-        (click)="search()" [disabled]="!name || !firstname">Search</button>-->
-         <button class="btn btn-default" (click)="search()">Search</button>
+    <!--
+    <div class="control-group">
+        <label>Status:</label>
+        <input [(ngModel)]="passengerStatus" class="form-control">
+    </div>-->
 
-</div>
+    <div class="control-group">
+        
+        <!--<button 
+            class="btn btn-default"
+            (click)="search()" [disabled]="!name || !firstname">Search</button>-->
+            <button class="btn btn-default" (click)="search()">Search</button>
+
+    </div>
+</form>
 
 
 <div class="row">

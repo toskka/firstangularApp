@@ -76,7 +76,36 @@ ng build --prod (optimierte Prod.Version ohne Kommentare, whitespace, etc
 --> landet im Dist Ordner --> ab auf Webserver
 
 
+-- Unit Testing
+npm test
+npm test -- --code -coverage
 
+-- End 2 Testing
+Locator:
+Auf Elemt Buttoneingabe testen
+Auf Buttoninhalt testen
+
+elemt(by.css("button")) Button
+elemt(by.css(".x"))	Klasse
+elemt(by.css("#x"))	Id
+
+Ausführen: npm run e2e
+
+
+// FORMULARE
+
+ngModel 2WayDataBinding: Properties aus Komponente werden abgebildet
+
+valid: Formulare als ganzes validiert, korrekt validiert
+
+Angular erzeugt Objektgraph
+
+<div *ngIf="!f?.controls?.von?.valid">
+?: vermeiden, dass Prüfung in NullpointerException läuft
+
+
+<div *ngIf="!f?.controls?.von?.hasError('required')">
+Errorrückgabe wenn required nicht erfüllt
 
 
 
